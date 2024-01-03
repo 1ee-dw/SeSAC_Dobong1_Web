@@ -18,14 +18,29 @@
             color: white;
       }
 
+    
+
       /* focus */
       textarea:focus {
             background-color: rgb(253,236,238);
       }
 
       /* checked */
-      #red:checked{
+      input[id="red"]:checked+label {
             background-color: red;
+            color:white;
+      }
+      /* id 속성이 red인 input 선택자가 checked 되었을 때 인접한 형제관계의 label의 배경색과 글자색 변경...? 
+      이렇게 하는 거 맞나요...? */
+
+          
+      input[id="blue"]:checked+label {
+            background-color: blue;
+            color:white;
+      }
+
+      input[id="yellow"]:checked+label {
+            background-color: yellow;
       }
 
       /* active */
@@ -54,15 +69,12 @@
         - 암시적 방식: label 내부에 input 쓰기 
             - checkbox 사용 시 명시적 방식으로 진행하기	
       -->
-      <label for="red">
-            <input type="checkbox" name="color" id="red" /> 빨강
-      </label>
-      <label for="blue">
-            <input type="checkbox" name="color" id="blue" /> 파랑
-      </label>
-      <label for="yellow">
-            <input type="checkbox" name="color" id="yellow" /> 노랑
-      </label>
+      <input type="checkbox" id="red" />
+      <label for="red">빨강</label>
+      <input type="checkbox" id="blue" />
+      <label for="blue"> 파랑</label>
+      <input type="checkbox" id="yellow" />
+      <label for="yellow"> 노랑</label>
       
       
       <!-- checkbox와 textarea 만들기 -->
