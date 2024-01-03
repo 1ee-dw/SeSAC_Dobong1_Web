@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+@font-face {
+      font-family: 'seolleimcool-SemiBold';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/seolleimcool-SemiBold.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+}
+span {
+      font-size:32px;
+}
+
+.f1 {
+      font-family: 'Nanum Brush Script', cursive;
+}
+
+.f2 {
+      font-family: 'Bagel Fat One', sans-serif;
+}
+
+.f3 {
+      font-family: 'seolleimcool-SemiBold';
+}
+
+.sentences {
+      font-weight: 700;
+      font-size: 16px;
+      /* font-size: 1rem;
+      font-size:1em; */
+      text-align: left;
+      /* text-align: center;
+      text-align: right; */
+      text-decoration: none;
+      /* text-decoration: underline;
+      text-decoration: overline; */
+
+      line-height: 32px;
+}
+
+a {
+      text-decoration: none;
+      color: black;
+
+}
