@@ -1,0 +1,31 @@
+.box {
+      display: inline-block;
+      width:400px;
+      height: 200px;
+      border:2px solid black;
+}
+
+.background {
+      background: linear-gradient(to bottom,gray,white);
+      
+      /* background 단축속성 사용 시 color image repeat position size 순서 */
+}
+
+.background-image {
+      background-image: url('./img/small_img.png');
+      /* background-repeat: repeat;
+      background-repeat: repeat-x;
+      background-repeat: repeat-y; */
+      background-repeat: no-repeat;
+      /* background-position: center;
+      background-position: center top;
+      background-position: 100px 200px;
+      background-position: 100px; */
+
+      background-size: 50px;
+      background-size: 90px 100px;
+      background-size: contain;
+      background-size: cover;
+      
+      background-attachment: fixed;
+}

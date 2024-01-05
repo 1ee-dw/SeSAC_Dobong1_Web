@@ -1,4 +1,4 @@
-.d-block {
+/* .d-block {
       display:block;
       background-color: aqua;
       border: 1px solid black;
@@ -92,4 +92,103 @@
 .box-per {
       width:50%;
       height:50%;
+} */
+.square {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      cursor: pointer;
+}
+
+/* 
+.border {
+      background-color: cyan;
+      /* border: 3px solid rgb(0, 223, 223);
+      border-color: rgb(0,223,223);
+      border-style: dotted;
+      border-width: 0 5px 10px 3px;
+}
+
+.rounded {
+      background-color: firebrick;
+      border-radius:  20px 5px 30px;
+}
+.border1 {
+      width: 100px;
+      height: 100px;
+      border: 5px solid chartreuse;
+      border-width: 0 20px 10px 0;
+}
+
+.border2 {
+            
+      width: 100px;
+      height: 100px;
+      border: 5px solid cadetblue;
+      border-style: dotted dashed solid;
+}
+
+.border3 {
+            
+      width: 100px;
+      height: 100px;
+      border: 5px solid darkorchid;
+      border-color: black gray black;
+}
+
+.border4 {
+      width: 100px;
+      height: 100px;
+      border: 5px solid fuchsia;
+}
+*/
+
+.box-sizing {
+      padding:20px;
+      border:15px solid red;
+      background-color: orange;
+}
+
+.content-box {
+      box-sizing: content-box;
+}
+
+.border-box {
+      box-sizing: border-box;
+}
+
+.d-none {
+      display: none; 
+      /* 속성과 자리 둘 다 없앰 */
+      background-color: red;
+  }
+  .invisible {
+    visibility: hidden;
+    /* 속성과 자리 남김 */
+    background-color: orangered;
+  }
+  
+  .opacity-0 {
+    opacity: 50%;
+    /* 투명도만 조절 */
+    background-color: tomato;
+  }
+
+  .tlftmq {
+      width:200px;
+      height:200px;
+      background-color: blue;
+}
+.tlftmq:hover {
+      display:none;
+}
+
+.overflow-hidden {
+      overflow: hidden;
+}
+.overflow-auto {
+      overflow: auto;
+}
+.overflow-visible {
+      overflow: visible;
 }

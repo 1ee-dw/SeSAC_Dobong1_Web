@@ -1,0 +1,70 @@
+body {
+      background: linear-gradient(lightgreen, olive);
+      height:1080px;
+      margin: 0;
+      padding: 0;
+}
+
+div {
+      width:100px;
+      height: 100px;
+      font-weight: 700;
+      text-align: center;
+      border: 2px solid red;
+      line-height: 100px;
+}
+
+.position-static {
+      background-color: pink;
+      position: static;
+      top:50px;
+}
+/* static : 기본값, 작성하지 않아도 됨. top bottom left right 적용 X */
+
+.position-relative {
+      background-color: aquamarine;
+      position: relative;
+      left:100px;
+}
+/* relative : 일반적인 문서의 흐름에 따라 배치(해치치 않음)되며 자기 자리가 보존됨. 자신의 원래의 위치를 기준으로 배치 */
+
+.position-absolute {
+      position: absolute;
+      background-color: gold;
+      top:0;
+      right:0;
+}
+      /* absolute : static이 아닌 제일 가까운 상위 요소 기준. 문서 흐름을 벗어남(최상단으로 올라와 원래 자리가 없어지며 문서의 흐름을 해침) */
+      
+.position-fixed {
+      position: fixed;
+      background-color: coral;
+      top:0
+}
+/* fixed : viewport 기준으로 특정 위치에 배치됨. 스크롤을 움직여도 해당 위치를 벗어나지 않음. -> header 제작시 많이 이용됨. */
+
+.container {
+      width:350px;
+      height: 350px;
+      position: relative; /* absolute를 문서의 흐름대로 배치하고 싶은 경우 주로 relative 속성의 상위요소를 만들어 배치함*/
+}
+
+.container div {
+      width:100px;
+      height:100px;
+      border-radius: 50px;
+      position: absolute;
+}
+.container div:nth-child(1) {
+      background-color: lightblue;
+      z-index:2;
+}
+.container div:nth-child(2){
+      background-color: blue;
+      left:50px;
+      z-index: 1;
+}
+.container div:nth-child(3){
+      background-color: darkblue;
+      left:100px;
+}

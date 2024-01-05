@@ -1,0 +1,9 @@
+position 종류 5가지
+static relative absolute fixed sticky-> sticky 는 잘 안 쓰임
+
+relative - 요소 원래의 위치를 기준으로 배치됨.
+absolute - position 값이 static이 아닌 상위 요소를 기준으로 배치되며 상위 요소가 모두 static인 경우 viewport(브라우저) 기준으로 배치됨. 최상단으로 올라와 문서의 흐름을 해칠 수 있음.
+            display 속성값이 block으로 변경됨
+fixed - 상위 요소와 상관 없이 viewport 기준으로 배치됨. absolute와 마찬가지로 최상단으로 올라와 문서의 흐름을 해칠 수 있음.
+
+transform 단축어 작성 순서 : 원근법(px) 이동(px) 크기(단위 X) 회전(deg) 기울임(deg)

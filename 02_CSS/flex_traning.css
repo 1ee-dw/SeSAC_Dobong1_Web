@@ -1,0 +1,29 @@
+.container {
+      width:500px;
+      height:500px;
+      background-color: gray;
+      display:flex;
+      flex-direction:column
+      /* flex-wrap:wrap;
+      align-content: center; */
+      /* 
+      flex-direction:column-reverse;   실습 1
+      flex-wrap:wrap;                  실습 2
+      */
+}
+
+.item {
+      width:100px;
+      height:100px;
+
+}
+
+.item1 {
+      background-color: white;
+}
+.item2 {
+      background-color: lightgray;
+}
+.item3 {
+      background-color: darkgray;
+}

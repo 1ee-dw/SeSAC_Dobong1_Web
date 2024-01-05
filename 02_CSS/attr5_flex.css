@@ -1,0 +1,74 @@
+.container {
+      width:max;
+      height:400px;
+      margin:0 auto;
+      background-color: gray;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: stretch;
+      align-content: flex-end;
+
+      /* 꼭 display:flex 선언 후 사용
+     
+      flex-direction
+      - row(기본) :좌 > 우
+      - row-reverse : 우 > 좌
+      - column : 상 > 하
+      - column-reverse : 하 > 상 
+      
+      flex-wrap : flex 속성으로 나열한 자식 요소들이 설정 폭을 넘겼을 경우 줄바꿈할건지 설정하는 속성
+      - nowrap(기본값) - 나열한 자식 요소들이 설정 폭을 넘겼을 경우 설정 폭 안에 나열한 만큼 구겨넣음
+      - wrap : 나열한 자식 요소들이 설정 폭을 넘겼을 경우 줄바꿔서 나열
+      
+      justify-content: 주 축의 정렬방법
+      - flex-start : 시작점 기준으로 나열
+      - flex-end : 끝점 기준으로 나열
+      - center : 중앙 정렬
+      - space-between : 처음과 마지막을 양 끝에 붙이고 나머지 영역을 공평하게 나눔( = 워드나 한글의 양쪽정렬 )
+      - space-around: 시작점에 여백을 주며 아이템마다 좌우 여백을 공평하게 나눠가짐( 1 템 1 1 템 1 1 템 1 ... )
+      - space-evenly: 시작점에 여백을 주며 시작점부터 끝점까지의 여백을 공평하게 나눠가짐( 2 템 2 템 2 템 2 ... )
+
+      align-items: 한 줄 교차축 정렬
+                  flex-direction이 column일 때 : 교차축 = 수평
+                                   row일 때    : 교차축 = 수직 
+      - stretch(기본값)
+      - flex-start
+      - flex-end
+      - center
+
+      align-content: 여러 줄 교차축 정렬(flex-wrap:wrap 필수)
+      - flex-start;
+      - flex-end;
+      - center;
+      - space-between;
+      - space-around;
+      - space-evenly;
+
+      */
+      
+}
+
+.items {
+      width:100px;
+      /* height:100px; */
+      font-size: 2rem;
+      text-align: center;
+      line-height: 100px;
+}
+
+.item1{
+      background-color: red;
+}
+.item2{
+      background-color: blue;
+}
+.item3{
+background-color: yellow;
+}
+.item4{
+background-color: green;
+}
+.item5{
+background-color: orange;
+}
