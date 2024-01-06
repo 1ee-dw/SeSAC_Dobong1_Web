@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>css 실습 3 - background 사용해 프로필 만들기</title>
+      <style>
+            .bg {
+                  width:550px;
+                  height: 550px;
+                  border-radius: 275px;
+                  background:linear-gradient(deeppink,yellow);
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  transform:rotate(45deg);      
+            }
+            
+            .profile-img {
+                  width:500px;
+                  height:500px;
+                  border: 10px solid white;
+                  border-radius: 260px;
+                  transform:rotate(-45deg);
+                  background: url('../img/kingbbangman.jpg') no-repeat center center;
+                  /* background-position: center center; */
+                  /* background-repeat: no-repeat; */
+                  background-size: contain;
+            }
+            </style>
+</head>
+<body>
+      <div class="bg"><div class="profile-img"></div></div>
+</body>
+</html>     
