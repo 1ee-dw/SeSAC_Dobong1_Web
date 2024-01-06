@@ -8,7 +8,7 @@
 .background {
       background: linear-gradient(to bottom,gray,white);
       
-      /* background 단축속성 사용 시 color image repeat position size 순서 */
+      /* background 단축속성 사용 시 color image repeat position 순서 */
 }
 
 .background-image {
