@@ -1,0 +1,62 @@
+/* 
+-- 과제 1 --
+body {
+      margin: 0 auto;
+}
+
+.ball {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: lightcoral;
+      position: relative;
+      animation-name: bm;
+      animation-duration: 10s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation: bm 10s linear 0s infinite;
+
+}
+
+@keyframes bm {
+
+      0%,
+      100% {
+            left: 0;
+            top: 0;
+      }
+
+      25% {
+            left:calc(100vw - 100px);
+            top:0
+      }
+
+      50% {
+            left:calc(100vw - 100px);
+            top:calc(100vh - 100px);
+            
+      }
+
+      75% {
+            top:calc(100vh - 100px);
+            left:0;
+      }
+} */
+/* 과제 2 */
+.slide{
+      position: relative;
+      animation: sliding 3s;
+      left:0;
+}
+
+@keyframes sliding {
+      0% {
+            left:99vw;
+            width:200vw;
+      }
+
+      100% {
+            left:0;
+            width:100vw
+      }
+}
