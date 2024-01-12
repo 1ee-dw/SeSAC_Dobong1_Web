@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>DOM 실습</title>
+</head>
+
+<body>
+      <div>민트 초코는 <span>맛있다 >_<< /span>
+      </div>
+      <script>
+            // 방법1
+            /* let spanTag = document.getElementsByTagName('span');
+            console.log(spanTag);
+            spanTag[0].innerHTML = '<b>맛없다 ㅡㅡ;;</b>';
+            // getElementsByTagName은 태그명이 span인 모든 항목을 불러오는 것이기 때문에
+            요소 뒤에 자신이 호출하는 요소가 몇번째인지 지정해줘야함 ex)spanTag[0]
+            spanTag[0].setAttribute('style', 'color:red;'); */
+            //방법 2
+            let spanTag = document.querySelector('span');
+            console.log(spanTag);
+            spanTag.innerHTML = '<b>맛없다 ㅡㅡ;;</b>';
+            spanTag.setAttribute('style', 'color:red;');
+      </script>
+</body>
+
+</html>

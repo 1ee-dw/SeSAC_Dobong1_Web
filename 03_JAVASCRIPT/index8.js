@@ -74,5 +74,5 @@ switch (now.getDay()) {
 
 now.getDay() === 0 || now.getDay() === 6 ? console.log('주말') : console.log('평일');
 
-let jebi = Math.round(Math.random()*10)
+let jebi = Math.round(Math.random()*10);
 console.log(jebi);

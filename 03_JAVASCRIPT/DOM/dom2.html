@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+            .box {
+                  width:100px;
+                  height:100px;
+                  border: 1px solid black;
+            }
+            #green {
+                  background: green;
+            }
+            #red {
+                  background:red;
+            }
+
+            .d-none {
+                  display: none;
+            }
+      </style>
+</head>
+<body>
+      <div class="container">
+            <div class="box" id="green">1</div>
+            <div class="box" id="red">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+      </div>
+      <button onclick="addClass()">addclass</button>
+      <button onclick="removeClass()">removeclass</button>
+      <button onclick="containsClass()">containsclass</button>
+      <button onclick="toggleClass()">toggleclass</button><hr />
+
+      <input type="text" id="userName" />
+      <script>
+            let greenBox = document.getElementById('green');
+
+            function addClass() {
+                  greenBox.classList.add('box1');
+                  console.log(greenBox.classList);
+            }
+
+            function removeClass() {
+                  greenBox.classList.remove('box1');
+                  console.log(greenBox.classList);
+            }
+
+            function containsClass() {
+                  console.log(greenBox.classList.contains('box1'));
+            }
+
+            // function toggleClass() {
+            //       greenBox.classList.
+            // }
+
+            let inputEl = document.getElementById('userName');
+            inputEl.setAttribute('placeholder','name');
+            inputEl.placeholder = 'name2';
+
+            // inputEl.style = 'color:red';
+            inputEl.style.color = 'red';
+
+            
+      </script>
+</body>
+</html>

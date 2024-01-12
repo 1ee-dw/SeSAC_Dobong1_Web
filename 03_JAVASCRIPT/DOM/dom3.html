@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>DOM - 타 노드 접근하기</title>
+</head>
+
+<body>
+
+</body>
+<div class="container">
+      <div class="box" id="green">1</div>
+      previous Test
+      <!-- 이이잉 기모륑 -->
+      <div class="box" id="red">2</div>
+      next Test
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+</div>
+<button onclick="getParent()"">getParent</button>
+<button onclick="pesibling()">previousElementSibling</button>
+<button onclick="pnsibling()">previousNodeSibling</button>
+<button onclick="nesibling()">nextElementSibling</button>
+<button onclick="nnsibling()">nextNodeSibling</button>
+<script>
+      
+      let container = document.getElementsByClassName('container');
+      let greenBox = document.getElementById('green');
+      let redBox = document.getElementById('red');
+
+// 부모 요소를 반환
+
+      function getParent() {
+            console.log(greenBox.parentNode);
+      }
+
+// 이전 형제 '요소'를 반환
+
+      function pesibling() {
+            console.log(redBox.previousElementSibling);
+      }
+
+// DOM 트리에서 바로 이전 형제를 반환
+
+      function pnsibling() {
+            console.log(redBox.previousSibling);
+      }
+
+// 다음 형제 요소 반환
+
+      function nesibling() {
+            console.log(redBox.nextElementSibling);
+      }
+
+// DOM 트리 상 바로 다음 형제 반환
+
+      function nnsibling() {
+            console.log(redBox.nextSibling);
+      }
+
+</script>
+</html>
