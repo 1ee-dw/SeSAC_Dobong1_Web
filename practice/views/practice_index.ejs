@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET</title>
+    <style>
+        fieldset {
+            margin:10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/getForm" method="get">
+        <h2>GET</h2>
+        <label for="name"><input type="text" name="name" id="name" placeholder="이름을 입력하세요." required /></label>
+        <fieldset>
+            <legend>성별</legend>
+            <label for="male"><input type="radio" name="gender" id="male" value="남성" required />남성</label>
+            <label for="female"><input type="radio" name="gender" id="female" value="여성" />여성</label>
+        </fieldset>
+        <fieldset>
+            <legend>생년월일</legend>
+            <label><select name="birthYear">
+                <% for(let y = new Date().getFullYear(); y>=1940; y--) { %>
+                    <option value="<%=y%>"><%=y%></option>
+                <%}%>
+            </select></label>년
+            <label><select name="birthMonth">
+                <% for(let m = 1; m <= 12; m++) { %>
+                    <option value="<%=m%>"><%=m%></option>
+                <%}%>
+            </select></label>월
+            <label><select name="birthDate">
+                <% for(let d = 1; d <= 12; d++) { %>
+                    <option value="<%=d%>"><%=d%></option>
+                <%}%>
+            </select></label>일
+        </fieldset>
+        <fieldset>
+            <legend>관심사</legend>
+            <label for="trip"><input type="checkbox" name="interest" id="trip" value="여행" />여행</label>
+            <label for="fashion"><input type="checkbox" name="interest" id="fashion" value="패션" />패션</label>
+            <label for="food"><input type="checkbox" name="interest" id="food" value="음식" />음식</label>
+        </fieldset>
+        <input type="submit" value="제출" />
+    </form>
+    <form action="/postForm" method="post">
+        <h2>POST</h2>
+        <label for="name"><input type="text" name="name" id="name" placeholder="이름을 입력하세요." required /></label>
+        <fieldset>
+            <legend>성별</legend>
+            <label for="male"><input type="radio" name="gender" id="male" value="남성" required />남성</label>
+            <label for="female"><input type="radio" name="gender" id="female" value="여성" />여성</label>
+        </fieldset>
+        <fieldset>
+            <legend>생년월일</legend>
+            <label><select name="birthYear">
+                <% for(let y = new Date().getFullYear(); y>=1940; y--) { %>
+                    <option value="<%=y%>"><%=y%></option>
+                <%}%>
+            </select></label>년
+            <label><select name="birthMonth">
+                <% for(let m = 1; m <= 12; m++) { %>
+                    <option value="<%=m%>"><%=m%></option>
+                <%}%>
+            </select></label>월
+            <label><select name="birthDate">
+                <% for(let d = 1; d <= 12; d++) { %>
+                    <option value="<%=d%>"><%=d%></option>
+                <%}%>
+            </select></label>일
+        </fieldset>
+        <fieldset>
+            <legend>관심사</legend>
+            <label for="trip"><input type="checkbox" name="interest" id="trip" value="여행" />여행</label>
+            <label for="fashion"><input type="checkbox" name="interest" id="fashion" value="패션" />패션</label>
+            <label for="food"><input type="checkbox" name="interest" id="food" value="음식" />음식</label>
+        </fieldset>
+        <fieldset>
+            <legend>선택사항</legend>
+            <label for="color">선호 색상: <input type="color" name="color" id="color"></label><br />
+            <label for="number">선호 숫자: <input type="number" name="number" id="number"></label>
+        </fieldset>
+        <input type="submit" value="제출" />
+    </form>
+</body>
+</html>

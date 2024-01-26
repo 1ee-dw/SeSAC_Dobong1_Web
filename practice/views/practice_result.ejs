@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정보 받기 - <%=title%></title>
+</head>
+<body>
+    <fieldset>
+        <legend><%=title%>으로 받은 정보</legend>
+        <p>이름: <%=userInfo.name%></p>
+        <p>성별: <%=userInfo.gender%></p>
+        <p>생년월일: <%=userInfo.birthYear%>-<%=userInfo.birthMonth%>-<%=userInfo.birthDate%></p>
+        <p>관심사: <%=userInfo.interest%></p>
+        <% if(addInfo) { %>
+            <p>좋아하는 색상: <%=userInfo.color%></p>
+            <p>좋아하는 숫자: <%=userInfo.number%></p>
+        <%}%>
+        <button type="submit"><a href="/" style="text-decoration:none; color:black;">홈으로</a></button>
+    </fieldset>
+</body>
+</html>

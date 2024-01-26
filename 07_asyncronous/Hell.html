@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>콜백 지옥 체험</title>
+    <style>
+        body {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>배경의 색이 1초에 한 번씩 변경됩니다</h1>
+    <script>
+        // 빨주노초파남보
+        // setTimeout(function () {
+        //     document.body.style.backgroundColor = 'orange';
+        //     setTimeout(function () {
+        //         document.body.style.backgroundColor = 'yellow';
+        //         setTimeout(function () {
+        //             document.body.style.backgroundColor = 'green';
+        //             setTimeout(function () {
+        //                 document.body.style.backgroundColor = 'blue';
+        //                 setTimeout(function () {
+        //                     document.body.style.backgroundColor = 'navy';
+        //                     setTimeout(function () {
+        //                         document.body.style.backgroundColor = 'purple';
+        //                     }, 1000);
+        //                 }, 1000);
+        //             }, 1000);
+        //         }, 1000);
+        //     }, 1000);
+        // }, 1000);
+        /*         
+        changeBgcolor('orange').then(function() {
+            return changeBgcolor('orange');
+        }).then(function() {
+            return changeBgcolor('yellow');
+        }).then(function() {
+            return changeBgcolor('green');
+        }).then(function() {
+            return changeBgcolor('blue');
+        }).then(function() {
+            return changeBgcolor('navy');
+        }).then(function() {
+            return changeBgcolor('purple');
+        })
+         */        
+        function changeBgcolor(color) {
+            return new Promise(function(resolve,reject) {
+                setTimeout(function() {
+                    document.body.style.backgroundColor = color;
+                    resolve();
+                },1000)
+            })
+        }
+
+        async function execute() {
+            await changeBgcolor('orange');
+            await changeBgcolor('yellow');
+            await changeBgcolor('green');
+            await changeBgcolor('blue');
+            await changeBgcolor('navy');
+            await changeBgcolor('purple');
+        }
+        execute()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('./includes/head',{title:'HOME'})%>
+</head>
+<body>
+    <%- include('./includes/header.ejs') %>
+    <h1>안녕하세요 ejs 입니다.</h1>
+    <img src="/static/img/pooh.png" alt="푸" width="100"/>
+    <h3>for문 사용해보기</h3>
+
+    <% for (i=1;i<=5;i++) {%>
+        <p><%= i %>번째 안녕하세요</p>
+    <%}%>
+</body>
+</html>

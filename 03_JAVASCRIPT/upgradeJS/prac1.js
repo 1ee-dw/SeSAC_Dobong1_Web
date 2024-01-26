@@ -1,4 +1,4 @@
-class Shape{
+/* class Shape{
     constructor(width, height) {
         this.width = width;
         this.height = height;
@@ -51,4 +51,16 @@ class Circle extends Shape{
 }
 
 let circle = new Circle(9999,9999,5);
-console.log(`원의 넓이: ${circle.getArea()}`);
+console.log(`원의 넓이: ${circle.getArea()}`); */
+
+let input = prompt('몇까지');
+input = Number(input);
+for (i=1; i<=input; i++) {
+    if (i%13===0 && i%2 ===1) console.log(i);
+}
+
+let sum3=0;
+for (let i = 0; i <= 100; i++) {
+    if (i % 2 === 0 || i % 5 === 0) sum += i;
+}
+console.log(sum3);
