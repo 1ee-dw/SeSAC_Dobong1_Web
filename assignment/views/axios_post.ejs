@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axios - post</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: whitesmoke
+        }
+
+        .container {
+            background-color: white;
+            width: 450px;
+            height: 600px;
+            box-shadow: 0 0 10px 1px lightslategray;
+            border-radius: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container>* {
+            margin: 1rem;
+        }
+
+        .container>input {
+            width: 80%;
+            height: 40px;
+            font-size: 32px;
+        }
+
+        .head {
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        button {
+            width: 80px;
+            height: 36px;
+            font-size: 20px
+        }
+    </style>
+</head>
+
+<body>
+    <form name="axios-post">
+        <div class="container">
+            <div class="head">login</div>
+            <input type="text" name="idInput" placeholder="ID를 입력하세요." />
+            <input type="password" name="pwInput" placeholder="PW를 입력하세요." />
+            <button type="button" onclick="axiosPost()">로그인</button>
+            <div class="result"></div>
+        </div>
+    </form>
+    <script>
+        function axiosPost() {
+            const result = document.querySelector('.result');
+            const form = document.forms['axios-post'];
+            const data = {
+                userID: form.idInput.value,
+                userPW: form.pwInput.value,
+            }
+
+            axios({
+                method: "post",
+                url: '/axios-post-result',
+                data: data,
+            }).then(function (response) {
+                console.log(data)
+                if (response.data===true) {
+                    result.style.color = 'blue'
+                    result.innerText = `${data.userID}님 환영합니다.`;
+                } else {
+                    result.style.color = 'red'
+                    result.innerText = response.data
+                }
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
+    </script>
+</body>
+
+</html>

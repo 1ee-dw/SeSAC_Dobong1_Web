@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axios - get</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        fieldset {
+            margin:1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <form name="axios-get">
+        <h2>실습 - axios get 회원가입</h2>
+        <label>이름 </label><input type="text" name="userName" />
+        <fieldset>
+            <legend>성별</legend>
+            <label><input type="radio" name="userGender" value="남자" />남자</label>
+            <label><input type="radio" name="uesrGender" value="여자" />여자</label>
+        </fieldset>
+        <fieldset>
+            <legend>생년월일</legend>
+            <label><select name="birthYear">
+                <% for(let y = new Date().getFullYear(); y>=1940; y--) { %>
+                    <option value="<%=y%>"><%=y%></option>
+                <%}%>
+            </select></label>년
+            <label><select name="birthMonth">
+                <% for(let m = 1; m <= 12; m++) { %>
+                    <option value="<%=m%>"><%=m%></option>
+                <%}%>
+            </select></label>월
+            <label><select name="birthDate">
+                <% for(let d = 1; d <= 31; d++) { %>
+                    <option value="<%=d%>"><%=d%></option>
+                <%}%>
+            </select></label>일
+        </fieldset>
+        <fieldset>
+            <legend>관심사</legend>
+            <label><input type="checkbox" name="userInterest" value="여행" />여행</label>
+            <label><input type="checkbox" name="userInterest" value="패션" />패션</label>
+            <label><input type="checkbox" name="userInterest" value="음식" />음식</label>
+        </fieldset>
+        <button type="button" onclick="axiosGet()">회원가입</button>
+    </form>
+    <script>
+        function axiosGet() {
+            const interests=[];
+            let interest = document.querySelectorAll('input[type=checkbox]:checked');
+            for( let i of interest ) {
+                interests.push(i.value);
+            }
+
+            const form = document.forms['axios-get'];
+            
+            const data = {
+                name:form.userName.value,
+                gender:form.userGender.value,
+                birth:`${form.birthYear.value}-${form.birthMonth.value}-${form.birthDate.value}`,
+                interest: interests,
+            }
+            axios({
+                method:"GET",
+                url:"/axios-get-result",
+                params: data,
+            }).then(function(response){
+                console.log(`${response.data.name} ${response.data.gender} ${response.data.birth} ${response.data.interest}`)
+            }).catch(function(error){
+                console.log(error);
+            });
+        }
+    </script>
+</body>
+</html>
