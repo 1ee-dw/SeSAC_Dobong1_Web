@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글</title>
+    <%-include('./include/head.ejs')%>
+    <style>
+        h1, div {
+            text-align:center;
+        }
+
+        p {
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+    <%-include('./include/header.ejs')%>
+    <h1><%=title%></h1>    
+    <p><%=content%></p>
+    <% if(img) {%>
+    <img src="/<%=img%>" alt="<%=contentID%>" width="200" />
+    <%}%>
+    <%console.log(img)%>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글 작성하기(form 제출)</title>
+    <%-include('./include/head.ejs')%>
+    <style>
+        body {
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+        }
+        form textarea {
+            width:60%;
+            height: 270px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 20px;
+            padding:1rem 0;
+            margin:2rem;
+            width:50%
+        }
+
+        form input[type='text'] {
+            width:60%;
+            margin-bottom: 5px;
+        }
+
+        button{
+            border:none;
+            border-radius: 10px;
+            font-weight: bold;
+            padding:8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>글 작성하기</h1>
+    <form action="/blog/post" method="post" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="글의 제목을 작성해주세요." />
+        <textarea name="content" placeholder="내용을 작성해주세요."></textarea><br />
+        <input type="file" name="img" /><br />
+        <button type="submit">등록</button>
+    </form>
+</body>
+</html>
