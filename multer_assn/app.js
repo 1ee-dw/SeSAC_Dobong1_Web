@@ -21,11 +21,18 @@ app.set('views','./views');
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use("/uploads", express.static(__dirname + "/uploads"));
 
 app.get('/',function(req,res) {
     res.render('index.ejs');
 });
 
+app.post('/signup',upload.single("profile"),function(req,res) {
+    res.render('result.ejs', {
+        path: req.file.path,
+        userInfo:req.body,
+    });
+});
 app.listen(port,function() {
     console.log(`http://localhost:${port}`);
-})
+});

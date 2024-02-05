@@ -6,6 +6,29 @@
     <title>MY PAGE</title>
 </head>
 <body>
-    
+    <div class="container">
+        <h1><%=userInfo.userID%>님의 마이페이지</h1>
+        <div>
+            <img src="/<%=path%>" alt="profile">
+            <table>
+                <tr>
+                    <td>아이디</td>
+                    <td><%=userInfo.userID%></td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td><%=userInfo.userPW%></td>
+                </tr>
+                <tr>
+                    <td>이름</td>
+                    <td><%=userInfo.name%></td>
+                </tr>
+                <tr>
+                    <td>나이</td>
+                    <td><%=userInfo.age%></td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </body>
 </html>
