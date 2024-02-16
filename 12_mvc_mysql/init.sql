@@ -14,6 +14,7 @@ insert into visitor(name,comment) values('bb','hi');
 insert into visitor values(null,'cc','vonjour');
 
 select * from visitor;
+drop table visitor;
 
 -- 방법 1
 create user 'sesac'@'%' identified by '5172';
