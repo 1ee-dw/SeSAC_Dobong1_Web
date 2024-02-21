@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const PORT = 8000;
+const db = require('./models/Visitor.js');
 
 app.set("view engine", "ejs");
 app.set("views", "./views");
@@ -18,6 +19,10 @@ app.get("*", function (req, res) {
     res.render('404.ejs');
 });
 
+db.sequelize.sync().then(function(result){
+    console.log(result);
+    console.log('db연결 성공');
+})
 app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}/user`);
 });
