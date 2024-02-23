@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+
+<body>
+    <form name="signUp">
+        <input type="text" name="inputID" placeholder="ID를 입력하세요." required />
+        <input type="password" name="inputPW" placeholder="PW를 입력하세요." required />
+        <input type="text" name="inputName" placeholder="이름을 입력하세요." required />
+        <button type="button" onclick="signUp()">회원가입</button>
+    </form>
+</body>
+<script>
+    /* 
+    async function axiosPost() {
+        const form = document.forms["register"];
+        const data = {
+            name: form.name.value,
+            gender: form.gender.value,
+        }
+
+        try {
+            const response = await axios({
+                method: "POST",
+                url: '/axios',
+                data: data,
+            });
+            console.log(response.data);
+            const { name: 이름, gender: 성별 } = response.data;
+            resultBox.style.color = 'black';
+            resultBox.innerText = `axios - post 요청 완료: ${이름} 님의 성별은 ${성별} 입니다`;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    */
+    async function signUp() {
+        const form = document.forms["signUp"];
+        const data = {
+            id: form.inputID.value,
+            password: form.inputPW.value,
+            name: form.inputName.value
+        }
+
+        try {
+            const response = await axios({
+                method:'POST',
+                url:'/signup',
+                data:data
+            });
+            console.log(response.data);
+        } catch(err) { console.log(err) }
+        console.log(data);
+        document.location.href = '/';
+    }
+</script>
+
+</html>
