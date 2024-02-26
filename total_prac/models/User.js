@@ -7,3 +7,13 @@ const conn = mysql.createConnection({
     database:"sesac"
 });
 
+exports.signUp = function (data,callback) {
+    console.log(data);
+    conn.query(`insert into user(pw, name, userid) values ('${data.password}','${data.name}','${data.id}');`,
+        function(err, rows) {
+            if (err) throw err;
+            console.log(rows);
+    })
+    callback();
+}
+

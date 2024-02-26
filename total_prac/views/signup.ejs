@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
+    <!-- axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
-    <form name="signUp">
+    <form name="userInfo">
         <input type="text" name="inputID" placeholder="ID를 입력하세요." required />
         <input type="password" name="inputPW" placeholder="PW를 입력하세요." required />
         <input type="text" name="inputName" placeholder="이름을 입력하세요." required />
-        <button type="button" onclick="signUp()">회원가입</button>
+        <button type="button" onclick="signUp();">회원가입</button>
     </form>
 </body>
 <script>
@@ -40,12 +42,13 @@
     }
     */
     async function signUp() {
-        const form = document.forms["signUp"];
+        const form = document.forms["userInfo"];
         const data = {
             id: form.inputID.value,
-            password: form.inputPW.value,
+            pw: form.inputPW.value,
             name: form.inputName.value
         }
+        console.log('signup input',data);
 
         try {
             const response = await axios({
@@ -53,11 +56,26 @@
                 url:'/signup',
                 data:data
             });
-            console.log(response.data);
+            console.log(response);
+            console.log('from signup input',response.data);
+            alert('회원가입이 완료되었습니다.');
+            // document.location.href='/';
         } catch(err) { console.log(err) }
-        console.log(data);
-        document.location.href = '/';
-    }
+        // axios({
+        //     method:'POST',
+        //     url:'/signup',
+        //     data:{
+        //         id:form.inputID.value,
+        //         pw: form.inputPW.value,
+        //         name: form.inputName.value
+        //     }
+        // }).then(function(response) {
+        //     console.log(response);
+        // }).catch(function(err) {
+        //     console.log(err);
+        // });
+        // document.location.href = '/';
+    };
 </script>
 
 </html>

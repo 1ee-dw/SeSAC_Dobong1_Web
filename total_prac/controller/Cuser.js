@@ -5,9 +5,14 @@ exports.signIn = function(request,response) {
     // response.send('abcd')
 }
 
-exports.signUp = function(request,response) {
+exports.renderSignUp = function(request,response) {
     response.render('signup.ejs');
 }
+
+exports.signUp = function(request,response) {
+    user.signUp(request.body, function(){});
+}
+
 
 // exports.main = function(request,response) {
 //     response.render('main.ejs');

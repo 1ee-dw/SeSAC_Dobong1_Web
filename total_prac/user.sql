@@ -13,3 +13,4 @@ create table user (
 );
 
 desc user;
+select * from user;
