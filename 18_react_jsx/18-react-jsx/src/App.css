@@ -1,0 +1,19 @@
+.div {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+.container {
+    width: 600px;
+    text-align: center;
+}
+
+.container .title {
+    background-color: orange;
+}
+
+.container .title h1 {
+    color: brown;
+    font-weight: 400;
+}
