@@ -129,7 +129,7 @@
                         method: "GET",
                         url: `/axios?name=${data.name}$gender=${data.gender}`,
                     });
-                    console.log(response.data);
+                    console.log(response);
                     const { name, gender } = response.data;
                     resultBox.innerText = `axios - get 요청 완료: ${name} 님의 성별은 ${gender}입니다.`;
                     resultBox.style.color = "green";
@@ -171,13 +171,13 @@
             /* fetch(`/fetch?name=${data.name}&gender=${data.gender}`,{
                 method: "GET", // method가 get 인 경우 생략 가능
             }) */
-            fetch(`/fetch?name=${data.name}&gender=${data.gender}`).then(function(response) {
+            fetch(`/fetch?name=${data.name}&gender=${data.gender}`).then(function (response) {
                 console.log(response);
                 return response.text();
-            }).then(function(result) {
+            }).then(function (result) {
                 console.log(result);
-                resultBox.style.color='coral';
-                resultBox.innerText=`fetch - get 요청 완료`
+                resultBox.style.color = 'coral';
+                resultBox.innerText = `fetch - get 요청 완료`
             });
         }
 
@@ -188,22 +188,22 @@
                 gender: form.gender.value,
             }
 
-            try{
-                const response = await fetch('/fetch',{
+            try {
+                const response = await fetch('/fetch', {
                     method: 'POST',
-                    headers:{
-                        "content-type":"application/json",
+                    headers: {
+                        "content-type": "application/json",
                     },
                     body: JSON.stringify(data),
                 });
                 console.log(response);
                 const result = await response.json();
                 console.log(result);
-            } catch(error) {
+            } catch (error) {
                 console.log(error)
             }
         }
     </script>
 </body>
 
-</html> 
+</html>
