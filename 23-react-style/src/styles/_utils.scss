@@ -6,6 +6,8 @@ $color-blue: blue;
 $color-navy: navy;
 $color-purple: purple;
 
+$px: 100px;
+
 $box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 $anime-duration: 0.4s;
 
@@ -41,4 +43,14 @@ $anime-duration: 0.4s;
     } @else {
         border-radius: 0;
     }
+}
+
+@mixin keyframes($keyframes-name) {
+    @keyframes #{$keyframes-name} {
+        @content;
+    }
+}
+
+@mixin anime($name, $duration, $delay) {
+    animation: $name $duration linear $delay infinite;
 }

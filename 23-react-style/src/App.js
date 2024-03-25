@@ -12,9 +12,6 @@
 //     );
 // }
 
-// import Sass from './components/Sass';
-import Prac1 from './components/practice/Prac1';
-
 // export default App;
 // import styled, { keyframes } from 'styled-components';
 // import logo from './logo.svg';
@@ -65,12 +62,17 @@ import Prac1 from './components/practice/Prac1';
 // }
 // export default App;
 
+// import Sass from './components/Sass';
+import Prac1 from './components/practice/Prac1';
+import Prac2 from './components/practice/Prac2';
+
 function App() {
     return (
         <>
             {/* <h4>sass</h4>
             <Sass /> */}
             <Prac1 />
+            <Prac2 />
         </>
     );
 }
