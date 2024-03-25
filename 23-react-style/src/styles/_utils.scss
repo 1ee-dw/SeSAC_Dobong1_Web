@@ -1,0 +1,44 @@
+$color-red: red;
+$color-orange: orange;
+$color-yellow: yellow;
+$color-green: green;
+$color-blue: blue;
+$color-navy: navy;
+$color-purple: purple;
+
+$box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+$anime-duration: 0.4s;
+
+@mixin box {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+@mixin circle($circle-color, $circle-opacity) {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid black;
+    display: inline-block;
+    background-color: $circle-color;
+    opacity: $circle-opacity;
+}
+
+@mixin box2($box-bgcolor: $color-red, $box-font-size: 15px, $box-color: white) {
+    @include box();
+    background-color: $box-bgcolor;
+    font-size: $box-font-size;
+    color: $box-color;
+    text-align: center;
+    line-height: 100px;
+    @if $box-bgcolor ==$color-red {
+        border-radius: 50%;
+    } @else if $box-bgcolor == black {
+        border-radius: 20%;
+    } @else {
+        border-radius: 0;
+    }
+}
