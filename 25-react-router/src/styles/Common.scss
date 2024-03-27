@@ -1,0 +1,21 @@
+body {
+    margin: 0 auto;
+}
+
+// header
+.header {
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    .header-item {
+        margin: 0 auto;
+    }
+}
+
+// main page
+.main {
+    background-color: #ffe5e3;
+    min-height: 100vh;
+}
