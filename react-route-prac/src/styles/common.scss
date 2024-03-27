@@ -1,0 +1,22 @@
+body {
+    margin: 0 auto;
+}
+
+.header {
+    background-color: skyblue;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100px;
+}
+
+.student {
+    background-color: yellowgreen;
+    strong {
+        color: blue;
+    }
+    span {
+        font-weight: bold;
+        color: red;
+    }
+}
