@@ -29,3 +29,39 @@ let heroGame_B: Game = {
     category: '롤플레잉',
     platform: '모바일',
 };
+
+const sum1 = (a: number, b: number) => console.log(a + b);
+
+sum1(5, 11);
+
+const sum2 = (...num: number[]): number => {
+    let result = 0;
+    num.forEach((item) => {
+        result += item;
+    });
+    return result;
+};
+
+console.log(sum2(2, 3, 4)); // 9
+console.log(sum2(2, 3, 4, 5, 6, 7, 8)); // 35
+
+const sum3 = (a: number[]): number => {
+    let result = 0;
+    a.forEach((num) => (result += num));
+    return result;
+};
+
+console.log('sum3', sum3([1, 2, 3, 4, 5]));
+
+function arrElement<A>(arr: A[], idx: number): A | boolean {
+    if (idx >= arr.length) {
+        return false;
+    } else return arr[idx];
+}
+console.log(arrElement<any>([1, 2, 3, 'qwer', 'qaz'], 3));
+console.log(arrElement<any>([1, 2, 3, 'qwer', 'qaz'], 5));
+
+const arrElement2 = <A>(arr: A[], idx: number): A | boolean => (idx < arr.length ? arr[idx] : false);
+
+console.log('2', arrElement2<any>([1, 2, 3, 'qwer', 'qaz'], 5));
+console.log('2', arrElement2<any>([1, 2, 3, 'qwer', 'qaz'], 3));
