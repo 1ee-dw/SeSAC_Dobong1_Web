@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Container from '../components/lecture/Conatiner';
 import EventObj from '../components/lecture/EvnentObj';
 import GenericList from '../components/lecture/GenericList';
@@ -8,6 +9,7 @@ import TodoList from '../components/lecture/TodoList';
 function Lecture() {
     return (
         <>
+            <Link to="/lecture/matjyp">맛집 페이지</Link>
             <Container>
                 <h2>강의 내용</h2>
                 <Props1 name="ldw" />
