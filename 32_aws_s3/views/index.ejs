@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use s3 image</title>
+</head>
+
+<body>
+    <h3>Load image</h3>
+    <img src="https://sesac-aws-rds-bucket.s3.ap-northeast-2.amazonaws.com/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7+2024-02-28+121023.png"
+        alt="새싹허브 로고">
+    <h3>Upload image</h3>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" id="image" />
+        <input type="submit" value="업로드">
+    </form>
+
+    <% if(imageUrl !=='' ) {%>
+        <img src="<%=imageUrl%>" alt="업로드 이미지지">
+        <%}%>
+</body>
+
+</html>
