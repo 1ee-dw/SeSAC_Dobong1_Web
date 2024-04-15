@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>socket.io 실습 1번</title>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <button onclick="hello()">hello</button>
+    <button onclick="study()">study</button>
+    <button onclick="bye()">bye</button>
+    <h3></h3>
+
+    <script>
+        const socket = io();
+        const h3 = document.querySelector('h3');
+
+        const hello = () => {
+            // socket.emit("hello", "hello", (msg) => {
+            //     h3.textContent = "server: " + msg;
+            // });
+
+            socket.emit("hello", "hello");
+            socket.on("hello2", (msg) => {
+                h3.textContent = "server: " + msg;
+            })
+        }
+        const study = () => {
+            socket.emit("study", "study")
+            socket.on("study2", (msg) => {
+                h3.textContent = "server: " + msg;
+            })
+        }
+        const bye = () => {
+            socket.emit("bye", "bye")
+            socket.on("bye2", (msg) => {
+                h3.textContent = "server: " + msg;
+            })
+        }
+    </script>
+</body>
+
+</html>
