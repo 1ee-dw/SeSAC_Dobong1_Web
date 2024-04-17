@@ -1,25 +1,6 @@
-import { io } from 'socket.io-client';
+import { useState } from 'react';
 
-const { useState, useEffect } = require('react');
-/*
-방법 1. component 내에 socket, initialSocketConnect 직접 선언.
-1-1) socket 선언(io import 해야함)
-*/
-const socket = io.connect('http://localhost:8080', {
-    autoConnect: false,
-});
-function Prac1() {
-    // 1-2) initialSocketConnect 선언 및 useEffect를 사용해 페이지가 처음 렌더링 될 때만 해당 함수 실행.
-    const initSocketConnect = () => {
-        console.log(socket.connected);
-        if (!socket.connected) socket.connect();
-        console.log('connected?', socket.connected);
-    };
-
-    useEffect(() => {
-        initSocketConnect();
-    }, []);
-
+function Prac2({ socket }) {
     const [fromServerStr, setFromServerStr] = useState('');
     const hello = () => {
         socket.emit('hello', '안녕하세요');
@@ -42,7 +23,6 @@ function Prac1() {
 
     return (
         <>
-            <h1>실습 1-1</h1>
             <button onClick={hello}>hello</button>
             <button onClick={study}>study</button>
             <button onClick={bye}>bye</button>
@@ -51,4 +31,4 @@ function Prac1() {
     );
 }
 
-export default Prac1;
+export default Prac2;

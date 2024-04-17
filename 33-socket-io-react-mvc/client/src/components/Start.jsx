@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import io from 'socket.io-client';
 import Prac1 from './Prac1';
+import Prac2 from './Prac2';
 
 const socket = io.connect('http://localhost:8080', {
     autoConnect: false,
@@ -29,7 +30,8 @@ export default function Start() {
             컴포넌트 안에 컴포넌트를 사용하는 경우 props로 socket을 보내주면됨
             socket과 initialSocketConnect 선언을 최상위에서 했기 때문에 자식 components는 선언할 필요 없음.
             */}
-            <Prac1 socket={socket} />
+            <h1>실습 1-2</h1>
+            <Prac2 socket={socket} />
         </>
     );
 }
